@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 227 65% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 227 65% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 227 65% 15%;
+
+    --primary: 227 65% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 207 76% 68%;
+    --secondary-foreground: 227 65% 15%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 207 76% 68%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 227 65% 30%;
+
+    --radius: 0.75rem;
+    
+    /* Ocean theme gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(227 65% 30%) 0%, hsl(227 65% 20%) 100%);
+    --gradient-sky: linear-gradient(180deg, hsl(207 76% 68%) 0%, hsl(207 76% 58%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(227 65% 30%) 0%, hsl(207 76% 40%) 100%);
+    
+    /* Shadows */
+    --shadow-ocean: 0 10px 40px -10px hsl(227 65% 30% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(227 65% 30% / 0.1);
+    
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 227 65% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 227 65% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 227 65% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 207 76% 68%;
+    --primary-foreground: 227 65% 15%;
+
+    --secondary: 227 65% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 207 76% 68%;
+    --accent-foreground: 227 65% 15%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 227 65% 20%;
+    --input: 227 65% 20%;
+    --ring: 207 76% 68%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer utilities {
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+
+  .gradient-sky {
+    background: var(--gradient-sky);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-ocean {
+    box-shadow: var(--shadow-ocean);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
