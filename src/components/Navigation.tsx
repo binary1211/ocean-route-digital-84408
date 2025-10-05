@@ -68,10 +68,23 @@ export function Navigation() {
           }}
           className="flex items-center gap-2 group"
         >
-          <Anchor className="h-8 w-8 text-primary group-hover:text-accent transition-colors" />
-          <span className="text-xl font-bold text-foreground">
+          {/* <Anchor className="h-8 w-8 text-primary group-hover:text-accent transition-colors" /> */}
+
+          {/* <span className="text-xl font-bold text-foreground">
             Ocean Route <span className="text-accent">International</span>
-          </span>
+          </span> */}
+
+            <img
+              src="./src/assets/logoNoBg.png"
+              alt="Logo"
+              className="h-11 w-16 mx-auto"
+            />
+            <img
+              src="./src/assets/logoName.png"
+              alt="Logo"
+              className="h-7 w-45 mx-auto"
+            />
+          
         </a>
 
         {/* Desktop Navigation */}

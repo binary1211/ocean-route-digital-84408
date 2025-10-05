@@ -79,8 +79,6 @@ export function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call - In production, this would call a backend endpoint
-      // For Lovable projects, you would typically use Lovable Cloud for this
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
       console.log("Contact form submission:", {

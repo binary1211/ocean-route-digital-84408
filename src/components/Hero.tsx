@@ -51,11 +51,18 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="inline-block mb-6"
           >
-            <Anchor className="h-16 w-16 text-accent mx-auto" />
+            {/* <Anchor className="h-16 w-16 text-accent mx-auto" /> */}
+
+            {/* <img
+              src="./src/assets/logoNoBg.png"
+              alt="Logo"
+              className="h-60 w-60 mx-auto"
+            /> */}
+
           </motion.div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            Ocean Route{" "}
+            OceanRoute{" "}
             <span className="text-accent">International</span>
           </h1>
 
@@ -91,10 +98,11 @@ export function Hero() {
                   window.scrollTo({ top: offsetPosition, behavior: "smooth" });
                 }
               }}
-              className="border-white text-white hover:bg-white hover:text-primary"
+              className="border-white text-accent/90 hover:bg-white hover:text-primary"
             >
               Our Services
             </Button>
+            
           </motion.div>
         </motion.div>
       </div>
