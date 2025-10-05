@@ -74,16 +74,8 @@ export function Navigation() {
             Ocean Route <span className="text-accent">International</span>
           </span> */}
 
-            <img
-              src="./src/assets/logoNoBg.png"
-              alt="Logo"
-              className="h-11 w-16 mx-auto"
-            />
-            <img
-              src="./src/assets/logoName.png"
-              alt="Logo"
-              className="h-7 w-45 mx-auto"
-            />
+            <img src="/logoNoBg.png" alt="Logo" className="h-11 w-16 mx-auto" />
+            <img src="/logoName.png" alt="Logo" className="h-7 w-45 mx-auto" />
           
         </a>
 
