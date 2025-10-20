@@ -13,40 +13,40 @@ export function Certifications() {
   const certifications = [
     {
       icon: Award,
-      name: "ISO 9001:2015",
-      description: "Quality Management Systems",
+      name: "FEIO",
+      description: "Federation of Indian Export Organisations",
       color: "text-amber-600",
     },
     {
       icon: Shield,
-      name: "HACCP Certified",
-      description: "Food Safety Standards",
+      name: "IEC",
+      description: "Import Export Code Licence",
       color: "text-green-600",
     },
     {
       icon: CheckCircle,
-      name: "FSSAI Approved",
-      description: "Food Safety & Standards",
+      name: "MSME",
+      description: "Ministry of Micro, Small & Medium Enterprises",
       color: "text-blue-600",
     },
     {
       icon: Star,
-      name: "GMP Compliant",
-      description: "Good Manufacturing Practices",
+      name: "Spice Board",
+      description: "Spices Board India",
       color: "text-purple-600",
     },
     {
       icon: Award,
-      name: "Organic Certified",
-      description: "USDA & EU Organic Standards",
+      name: "Apeda",
+      description: "Agricultural and Processed Food Products Export Development Authority",
       color: "text-emerald-600",
     },
     {
       icon: Shield,
-      name: "Export Excellence",
-      description: "Govt. of India Recognition",
+      name: "DGFT",
+      description: "Directorate General of Foreign Trade",
       color: "text-indigo-600",
-    },
+    }
   ];
 
   return (

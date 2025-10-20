@@ -22,15 +22,15 @@ export function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-accent" />
-                <span>externaluse.made@gmail.com</span>
+                <span>oceanrouteinternational@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-accent" />
-                <span>+91 XXX XXX XXXX</span>
+                <span>+91 9427029966</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-accent" />
-                <span>Global Trade Center, Mumbai, India</span>
+                <span>A - 803, apple avenue, near city center , yogichok</span>
               </div>
             </div>
           </div>

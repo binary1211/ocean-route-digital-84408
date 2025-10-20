@@ -139,7 +139,7 @@ export function ContactForm() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
                     <p className="text-sm text-muted-foreground">
-                      externaluse.made@gmail.com
+                      oceanrouteinternational@gmail.com
                     </p>
                   </div>
                 </div>
@@ -155,7 +155,7 @@ export function ContactForm() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Phone</h3>
                     <p className="text-sm text-muted-foreground">
-                      +91 XXX XXX XXXX
+                      +91 9427029966
                     </p>
                   </div>
                 </div>
@@ -173,7 +173,7 @@ export function ContactForm() {
                       Address
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      Global Trade Center, Mumbai, India
+                      A - 803, apple avenue, near city center , yogichok
                     </p>
                   </div>
                 </div>
@@ -330,7 +330,7 @@ export function ContactForm() {
                       )}
                     />
 
-                    <FormField
+                    {/* <FormField
                       control={form.control}
                       name="gdprConsent"
                       render={({ field }) => (
@@ -350,7 +350,7 @@ export function ContactForm() {
                           </div>
                         </FormItem>
                       )}
-                    />
+                    /> */}
 
                     <Button
                       type="submit"
@@ -359,7 +359,7 @@ export function ContactForm() {
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
-                        "Sending..."
+                        "no..."
                       ) : (
                         <>
                           Send Message
