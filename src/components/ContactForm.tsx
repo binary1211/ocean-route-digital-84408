@@ -5,7 +5,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
@@ -20,6 +26,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const formSchema = z.object({
   fullName: z
@@ -39,10 +46,9 @@ const formSchema = z.object({
     .string()
     .min(10, "Message must be at least 10 characters")
     .max(1000, "Message must be less than 1000 characters"),
-  productInterest: z.array(z.string()).min(1, "Please select at least one product category"),
-  gdprConsent: z.boolean().refine((val) => val === true, {
-    message: "You must accept the privacy policy",
-  }),
+  productInterest: z
+    .array(z.string())
+    .min(1, "Please select at least one product category"),
 });
 
 const productCategories = [
@@ -71,15 +77,37 @@ export function ContactForm() {
       phone: "",
       message: "",
       productInterest: [],
-      gdprConsent: false,
     },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-
+    console.log("//");
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      const templateParams = {
+        from_name: values.fullName,
+        from_company: values.company,
+        from_email: values.email,
+        from_phone: values.phone || "Not provided",
+        message: values.message,
+        product_interest: values.productInterest.join(", "),
+        to_email: "oceanrouteinternational@gmail.com",
+        reply_to: values.email,
+      };
+
+      await emailjs.send(
+        "service_b8d2o6b", // EmailJS service ID
+        "template_y8rzl99", // EmailJS template ID
+        templateParams,
+        "dzhiXJNGBfGXDRZMV" // EmailJS public key
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
 
       console.log("Contact form submission:", {
         ...values,
@@ -93,6 +121,7 @@ export function ContactForm() {
 
       form.reset();
     } catch (error) {
+      console.error("Email sending error:", error);
       toast({
         title: "Error sending message",
         description: "Please try again later or contact us directly.",
@@ -117,8 +146,8 @@ export function ContactForm() {
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Ready to start your global trade journey? Get in touch with our
-            team today.
+            Ready to start your global trade journey? Get in touch with our team
+            today.
           </p>
         </motion.div>
 
@@ -137,7 +166,9 @@ export function ContactForm() {
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                    <h3 className="font-semibold text-foreground mb-1">
+                      Email
+                    </h3>
                     <p className="text-sm text-muted-foreground">
                       oceanrouteinternational@gmail.com
                     </p>
@@ -153,7 +184,9 @@ export function ContactForm() {
                     <Phone className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Phone</h3>
+                    <h3 className="font-semibold text-foreground mb-1">
+                      Phone
+                    </h3>
                     <p className="text-sm text-muted-foreground">
                       +91 9427029966
                     </p>
@@ -302,7 +335,9 @@ export function ContactForm() {
                                   <FormItem className="flex items-center space-x-2 space-y-0">
                                     <FormControl>
                                       <Checkbox
-                                        checked={field.value?.includes(category)}
+                                        checked={field.value?.includes(
+                                          category
+                                        )}
                                         onCheckedChange={(checked) => {
                                           return checked
                                             ? field.onChange([
@@ -359,7 +394,7 @@ export function ContactForm() {
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
-                        "no..."
+                        "sending......."
                       ) : (
                         <>
                           Send Message

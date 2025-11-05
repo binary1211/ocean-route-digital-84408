@@ -10,10 +10,14 @@ export function Footer() {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <Anchor className="h-8 w-8 text-accent" />
+              {/* <Anchor className="h-8 w-8 text-accent" />
               <span className="text-xl font-bold">
                 Ocean Route <span className="text-accent">International</span>
-              </span>
+              </span> */}
+
+              {/* <img src="/logoNoBg.png" alt="Logo" className="h-8 w-16 mx-auto" />
+            <img src="/logoName.png" alt="Logo" className="h-7 w-45 mx-auto" /> */}
+
             </div>
             <p className="text-primary-foreground/80 mb-4 max-w-md">
               Your trusted partner in global agricultural trade. Excellence in
